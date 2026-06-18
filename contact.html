@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | AAM Palace</title>
+    <meta name="description" content="Contact AAM Palace wedding hall at 118/3A, TV Puram, TH Road, Ponneri, Chennai-601204.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="index.html">AAM Palace <span>Wedding Hall, Ponneri</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="venue.html">Venue</a>
+          <a href="gallery.html">Gallery</a>
+          <a class="active" href="contact.html">Contact</a>
+          <a class="call-pill" href="tel:+919443336686">9443336686</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="wrap">
+          <p class="eyebrow">Contact</p>
+          <h1>Book your function at AAM Palace</h1>
+          <p>Call for date availability, visit timing, and event planning details.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap contact-layout">
+          <aside class="contact-panel">
+            <div class="contact-line">
+              <b>Phone</b>
+              <a href="tel:+919443336686">9443336686</a>
+            </div>
+            <div class="contact-line">
+              <b>WhatsApp</b>
+              <a href="https://wa.me/919443336686">Message AAM Palace</a>
+            </div>
+            <div class="contact-line">
+              <b>Address</b>
+              <p>118/3A, TV Puram, TH Road, Ponneri, Chennai-601204, Tamil Nadu</p>
+            </div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=AAM%20Palace%20118%2F3A%20TV%20Puram%20TH%20Road%20Ponneri%20Chennai%20601204" target="_blank" rel="noopener">
+              Open AAM Palace Location
+            </a>
+          </aside>
+
+          <section class="contact-panel">
+            <h2>Enquiry form</h2>
+            <form id="enquiryForm">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name">
+              </label>
+              <label>
+                Function type
+                <select name="functionType">
+                  <option>Wedding</option>
+                  <option>Reception</option>
+                  <option>Engagement</option>
+                  <option>Birthday or family function</option>
+                  <option>Other event</option>
+                </select>
+              </label>
+              <label>
+                Preferred date
+                <input type="date" name="date">
+              </label>
+              <label>
+                Message
+                <textarea name="text" placeholder="Share guest count, event timing, and any requirements."></textarea>
+              </label>
+              <button class="button dark" type="submit">Send Enquiry on WhatsApp</button>
+              <p class="form-note">For the quickest response, call 9443336686 directly.</p>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>AAM Palace</strong>
+          <p>118/3A, TV Puram, TH Road, Ponneri, Chennai-601204, Tamil Nadu</p>
+        </div>
+        <a class="button primary" href="tel:+919443336686">Call 9443336686</a>
+      </div>
+    </footer>
+    <script>
+      const enquiryForm = document.getElementById("enquiryForm");
+
+      enquiryForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(enquiryForm);
+        const message = [
+          "Hello AAM Palace, I would like to enquire about a booking.",
+          `Name: ${formData.get("name") || "Not shared"}`,
+          `Function: ${formData.get("functionType")}`,
+          `Preferred date: ${formData.get("date") || "Not shared"}`,
+          `Message: ${formData.get("text") || "Please share availability and details."}`
+        ].join("\n");
+
+        window.location.href = `https://wa.me/919443336686?text=${encodeURIComponent(message)}`;
+      });
+    </script>
+  </body>
+</html>
